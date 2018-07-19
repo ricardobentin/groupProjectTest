@@ -13,7 +13,7 @@ $("#roviSubmit").on("click", function () {
     event.preventDefault();
     roviQ = $(this).val().trim();
     console.log(roviQ);
-    var roviQueryURL = `http://api.rovicorp.com/search/v2.1/video/search?entitytype=onetimeonly&query=${roviQ}&rep=1&size=20&offset=0&language=en&country=US&format=json&apikey=${roviAPIKey}&sig=01b4e629053d3095fb67f1ad3e41f294`
+    var roviQueryURL = `https://api.rovicorp.com/search/v2.1/video/search?entitytype=onetimeonly&query=${roviQ}&rep=1&size=20&offset=0&language=en&country=US&format=json&apikey=${roviAPIKey}&sig=01b4e629053d3095fb67f1ad3e41f294`
 
     $.get(roviQueryURL).then(function (roviResponse) {
         console.log(roviResponse);
@@ -42,7 +42,7 @@ $.getJSON('https://json.geoiplookup.io/?callback=?', function (data) {
 
 $("#gnMovies").on("click", function () {
     event.preventDefault();
-    var gnMovieQueryURL = `http://data.tmsapi.com/v1.1/movies/showings?startDate=2018-07-19&zip=${zip}&api_key=${gnAPIKey}`;
+    var gnMovieQueryURL = `https://data.tmsapi.com/v1.1/movies/showings?startDate=2018-07-19&zip=${zip}&api_key=${gnAPIKey}`;
     console.log("This is the grace note Movie Showtime query: " + gnMovieQueryURL);
     $.get(gnMovieQueryURL).then(function (gnMovieResponse) {
         console.log(gnMovieResponse);
@@ -54,7 +54,7 @@ $("#gnMovies").on("click", function () {
 
 $("#gnTV").on("click", function () {
     event.preventDefault();
-    var gnTVQueryURL = `http://data.tmsapi.com/v1.1/programs/newShowAirings?lineupId=USA-TX42500-X&startDateTime=2018-07-19T16%3A30Z&api_key=${gnAPIKey}`;
+    var gnTVQueryURL = `https://data.tmsapi.com/v1.1/programs/newShowAirings?lineupId=USA-TX42500-X&startDateTime=2018-07-19T16%3A30Z&api_key=${gnAPIKey}`;
     console.log("This is the grace note Movie Showtime query: " + gnTVQueryURL);
     $.get(gnTVQueryURL).then(function (gnTVResponse) {
         console.log(gnTVResponse);
@@ -66,7 +66,7 @@ $("#gnTV").on("click", function () {
 
 $("#gnSports").on("click", function () {
     event.preventDefault();
-    var gnSportsQueryURL = `http://data.tmsapi.com/v1.1/sports/all/events/airings?lineupId=USA-TX42500-X&startDateTime=2018-07-19T16%3A30Z&api_key=${gnAPIKey}`;
+    var gnSportsQueryURL = `https://data.tmsapi.com/v1.1/sports/all/events/airings?lineupId=USA-TX42500-X&startDateTime=2018-07-19T16%3A30Z&api_key=${gnAPIKey}`;
     console.log("This is the grace note what sports are on TV query: " + gnSportsQueryURL);
     $.get(gnSportsQueryURL).then(function (gnSportsResponse) {
         console.log(gnSportsResponse);
@@ -78,7 +78,7 @@ $("#gnSports").on("click", function () {
 
 $("#gnTVMovies").on("click", function () {
     event.preventDefault();
-    var gnTVMoviesQueryURL = `http://data.tmsapi.com/v1.1/movies/airings?lineupId=USA-TX42500-X&startDateTime=2018-07-19T16%3A30Z&api_key=${gnAPIKey}`;
+    var gnTVMoviesQueryURL = `https://data.tmsapi.com/v1.1/movies/airings?lineupId=USA-TX42500-X&startDateTime=2018-07-19T16%3A30Z&api_key=${gnAPIKey}`;
     console.log("This is the grace note what movies are on TV query: " + gnTVMoviesQueryURL);
     $.get(gnTVMoviesQueryURL).then(function (gnTVMoviesResponse) {
         console.log(gnTVMoviesResponse);
